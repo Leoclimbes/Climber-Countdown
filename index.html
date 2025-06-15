@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Countdown Timer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-900 text-white min-h-screen flex items-center justify-center">
+  <div class="max-w-md mx-auto p-6 bg-gradient-to-r from-purple-700 via-pink-600 to-red-600 rounded-3xl shadow-2xl text-white font-sans select-none">
+    <h1 class="text-4xl font-extrabold text-center mb-6 tracking-wide drop-shadow-lg">
+       Climber Countdown
+    </h1>
+  
+    <div class="flex space-x-4 mb-6">
+      <div class="flex-1">
+        <label for="climb-time" class="block text-sm font-semibold mb-1">Climbing Time (seconds)</label>
+        <input
+          id="climb-time"
+          type="number"
+          placeholder="e.g. 60"
+          class="w-full px-4 py-3 rounded-xl bg-white bg-opacity-20 placeholder-white placeholder-opacity-75 focus:outline-none focus:ring-4 focus:ring-pink-400 focus:bg-opacity-40 transition duration-300"
+        />
+      </div>
+  
+      <div class="flex-1">
+        <label for="transition-time" class="block text-sm font-semibold mb-1">Transition Time (seconds)</label>
+        <input
+          id="transition-time"
+          type="number"
+          placeholder="e.g. 10"
+          class="w-full px-4 py-3 rounded-xl bg-white bg-opacity-20 placeholder-white placeholder-opacity-75 focus:outline-none focus:ring-4 focus:ring-pink-400 focus:bg-opacity-40 transition duration-300"
+        />
+      </div>
+    </div>
+  
+    <div class="text-center mb-6">
+      <div id="phase" class="text-3xl font-bold tracking-wide mb-2 drop-shadow-lg"></div>
+      <div
+        id="timer"
+        class="text-7xl font-mono font-extrabold bg-black bg-opacity-40 rounded-3xl py-6 px-12 mx-auto w-max tracking-widest drop-shadow-xl"
+      >
+        00:00
+      </div>
+    </div>
+  
+    <div class="text-center">
+      <button
+        id="start-btn"
+        class="px-10 py-3 bg-white bg-opacity-20 hover:bg-opacity-40 transition duration-300 rounded-full text-white text-xl font-semibold shadow-md shadow-pink-500/60"
+      >
+        Start
+      </button>
+    </div>
+  </div>
+  
+  
+<script src="countdown.js"></script>
+  </body>
+  </html>
+
+

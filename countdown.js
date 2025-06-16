@@ -36,39 +36,48 @@ startButton.addEventListener("click", () => {
     phase.textContent = "Climbing";
     climbCountDown = climbTime;
     timer.textContent = formatTime(climbCountDown);
-
+  
+    
+    timer.classList.remove("text-blue-400");
+    timer.classList.add("text-white");
+  
     clearInterval(intervalId);
     intervalId = setInterval(() => {
       climbCountDown--;
       timer.textContent = formatTime(climbCountDown);
-
+  
       if (climbCountDown === 3) climbWarningAudio.play();
-
+  
       if (climbCountDown <= 0) {
         clearInterval(intervalId);
         startTransition();
       }
     }, 1000);
   }
-
+  
   function startTransition() {
     phase.textContent = "Transition";
     transitionCountDown = transitionTime;
     timer.textContent = formatTime(transitionCountDown);
-
+  
+    
+    timer.classList.remove("text-white");
+    timer.classList.add("text-blue-400");
+  
     clearInterval(intervalId);
     intervalId = setInterval(() => {
       transitionCountDown--;
       timer.textContent = formatTime(transitionCountDown);
-
+  
       if (transitionCountDown === 1) transitionEndAudio.play();
-
+  
       if (transitionCountDown <= 0) {
         clearInterval(intervalId);
         startClimb();
       }
     }, 1000);
   }
+  
 
   startClimb();
 });
